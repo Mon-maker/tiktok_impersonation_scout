@@ -1,3 +1,5 @@
+// sample json file
+
 {
     "alpha_group": {
         "company_name": "Alpha Financial Holdings Co., Ltd.",
@@ -60,3 +62,4 @@
         "status": "detecting"
     }
 }
+
