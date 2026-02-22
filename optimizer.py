@@ -5,10 +5,13 @@ from datetime import datetime, timedelta
 from openai import AzureOpenAI
 
 # === Azure OpenAI Configuration ===
+import os
+
+# === Azure OpenAI Configuration ===
 AOAI_API_KEY = os.getenv("AZURE_OPENAI_API_KEY")
-AOAI_API_VERSION = "2023-12-01-preview"
-AOAI_API_ENDPOINT = "https://honeypot-test.openai.azure.com/"
-DEPLOY_NAME = "Honeypot_test"
+AOAI_API_VERSION = os.getenv("AZURE_OPENAI_API_VERSION", "2023-12-01-preview")
+AOAI_API_ENDPOINT = os.getenv("AZURE_OPENAI_API_ENDPOINT")
+DEPLOY_NAME = os.getenv("AZURE_OPENAI_DEPLOYMENT_NAME")
 
 # === Paths ===
 CONFIG_PATH = "configs/target2detect.json"
@@ -129,4 +132,5 @@ def optimize_keywords(target: str, guideline: str, df: pd.DataFrame, target_conf
         target_config["languages2ignore"] = list(set(target_config["languages2ignore"]))  # ✅ fix
 
     return target_config
+
 
