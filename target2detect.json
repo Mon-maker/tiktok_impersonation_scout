@@ -1,5 +1,8 @@
-// sample json file
-
+{
+  "_comment": "This file is only a sample JSON configuration for demonstration purposes.",
+  "name": "example",
+  "status": "testing"
+}
 {
     "alpha_group": {
         "company_name": "Alpha Financial Holdings Co., Ltd.",
@@ -62,4 +65,5 @@
         "status": "detecting"
     }
 }
+
 
