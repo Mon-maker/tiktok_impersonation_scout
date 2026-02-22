@@ -1,0 +1,25 @@
+# Environment variables
+.env
+*.env
+
+# Cookies and credentials
+cookies*.json
+
+# Output folders
+snapshots/
+reports/
+sample_output/*.xlsx
+sample_output/*.csv
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Mac / Windows system files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
