@@ -1,0 +1,62 @@
+{
+    "fubon": {
+                "company_name": "富邦金融控股股份有限公司",
+                "keywords2search": [["fubon"], ["富邦銀行", "信用卡"], ["富邦證券"],["富邦"], ["富邦金"], ["富邦信貸"]],
+                "keywords4risk_estimation": [["富邦", "人壽"], ["富邦", "銀"], ["富邦", "證券"], ["富邦", "金"]],
+                "general_keywords2ignore":[["啦隊"], ["fubon", "angels"], ["野球"], ["Art", "Museum"]],
+                "languages2ignore": ["越南文", "阿拉伯文", "泰文", "日文", "天城文"],
+                "faces2detect": [],
+                "users2ignore": [],
+                "status": "detecting"
+            },
+    "tbb": {
+                "company_name": "臺灣中小企業銀行",
+                "keywords2search": [["臺灣企銀"], ["臺企銀"], ["台灣企銀"], ["台企銀"]],
+                "keywords4risk_estimation": [["臺灣企銀"], ["臺企銀"], ["台灣企銀"], ["台企銀"]],
+                "general_keywords2ignore":[],
+                "languages2ignore": ["越南文", "阿拉伯文", "泰文", "日文", "天城文"],
+                "face2detect": [],
+                "users2ignore": [],
+                "status": "detecting"
+            },
+    "momo": {
+                "company_name": "富邦媒體科技股份有限公司",
+                "keywords2search": [["momo","購物"]],
+                "keywords4risk_estimation": [["momo","購物"]],
+                "general_keywords2ignore":[["Twice"], ["yaoyorozu"]],
+                "languages2ignore": ["越南文", "阿拉伯文", "泰文", "日文", "天城文"],
+                "faces2detect": [],
+                "users2ignore": [],
+                "status": "detecting"
+            },
+    "carrefour": {
+                "company_name": "家福股份有限公司 (測試藍勾勾判定功能用)",
+                "keywords2search": [["Carrefour"]],
+                "keywords4risk_estimation": [["Carrefour"]],
+                "general_keywords2ignore":[["#"], ["@"], ["i"], ["l"]],
+                "languages2ignore": ["越南文", "阿拉伯文", "泰文", "日文", "天城文"],
+                "faces2detect": [],
+                "users2ignore": [],
+                "status": "detecting"
+            },
+    "cathayholdings": {
+                "company_name": "國泰金融控股股份有限公司",
+                "keywords2search": [["國泰"], ["國泰證券"], ["國泰世華"]],
+                "keywords4risk_estimation": [["國泰證券"], ["國泰世華"]],
+                "general_keywords2ignore":[],
+                "languages2ignore": ["越南文", "阿拉伯文", "泰文", "日文", "天城文"],
+                "faces2detect": [],
+                "users2ignore": [],
+                "status": "detecting"
+            },
+    "twm": {
+                "company_name": "台灣大哥大股份有限公司",
+                "keywords2search": [["台灣大哥大"], ["台灣大哥大客服"]],
+                "keywords4risk_estimation": [["台灣大哥大", "客服"]],
+                "general_keywords2ignore":[["台灣大哥大", "門市"]],
+                "languages2ignore": ["越南文", "阿拉伯文", "泰文", "日文", "天城文"],
+                "faces2detect": [],
+                "users2ignore": [],
+                "status": "detecting"
+            }
+}
