@@ -14,7 +14,7 @@ AOAI_API_ENDPOINT = os.getenv("AZURE_OPENAI_API_ENDPOINT")
 DEPLOY_NAME = os.getenv("AZURE_OPENAI_DEPLOYMENT_NAME")
 
 # === Paths ===
-CONFIG_PATH = "configs/target2detect.json"
+CONFIG_PATH = "target2detect_sample.json"
 REPORTS_DIR = "reports/"
 
 # === LLM Client ===
@@ -135,6 +135,7 @@ def optimize_keywords(target: str, guideline: str, df: pd.DataFrame, target_conf
         target_config["languages2ignore"] = list(set(target_config["languages2ignore"]))  # ✅ fix
 
     return target_config
+
 
 
 
