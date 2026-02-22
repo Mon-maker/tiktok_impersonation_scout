@@ -26,32 +26,35 @@ client = AzureOpenAI(
 
 def ask_llm_optimize_keywords(samples, target, guideline, current_keywords2search):
     system_prompt = f"""
-You are an intelligent keyword optimizer for TikTok search.
+You optimize TikTok search keyword groups.
 
-The goal is to help find the most relevant video content for a specific client target: {target}.
-The guideline for relevance is: \"{guideline}\"
+Target: {target}
+Relevance guideline: {guideline}
 
-Each keyword group in `keywords2search` is a list of strings. A keyword group matches a video only if **all the terms in the group appear together** in the video description (logical AND). The data provided includes matched video descriptions and their keyword hits.
+Definition:
+- keywords2search is List[List[str]].
+- A group matches only if ALL terms appear in the video description (AND).
 
-Your task:
-1. Analyze which keyword groups are effective at matching relevant content.
-2. Identify noisy or misleading keyword groups that bring in unrelated content.
-3. Simplify or merge groups where appropriate, without losing effectiveness.
-4. Suggest phrases to ignore that frequently appear in irrelevant content.
-5. Suggest languages to exclude if they commonly occur in unrelated content.
+Input:
+You will receive JSON samples of matched videos. Each sample includes:
+- description
+- matched_keyword_groups
+- (optional) relevance_label (relevant / irrelevant)
 
-Rules:
-- You must return the same structure: a list of keyword groups → `List[List[str]]`.
-- The number of keyword groups in `merged_keywords2search` must **not exceed** the original count.
-- Be compact and high-precision.
-- Do NOT include any explanation in your output — only valid JSON.
+Task:
+- Improve precision while preserving coverage.
+- Prefer minimal changes. If evidence is weak, keep the original groups.
+- Do not increase the number of groups.
 
-Output a JSON object with these keys:
-- `\"merged_keywords2search\"`: List of List of strings (refined search keywords)
-- `\"new_general_keywords2ignore\"`: List of List of strings (phrases to block)
-- `\"new_languages2ignore\"`: List of language names in Chinese (e.g. \"越南文\", \"阿拉伯文\")
-
-Only return the JSON result. Nothing else.
+Return ONLY valid JSON (no markdown, no explanations, double quotes only):
+{{
+  "merged_keywords2search": [["term1","term2"], ...],
+  "new_general_keywords2ignore": ["phrase1","phrase2", ...],
+  "new_languages2ignore": ["vi","ar","th", ...]
+}}
+Constraints:
+- merged_keywords2search length <= original length
+- Do not invent new product names. Use only terms observed in samples or present in current keywords.
 """
 
     messages = [
@@ -132,5 +135,6 @@ def optimize_keywords(target: str, guideline: str, df: pd.DataFrame, target_conf
         target_config["languages2ignore"] = list(set(target_config["languages2ignore"]))  # ✅ fix
 
     return target_config
+
 
 
