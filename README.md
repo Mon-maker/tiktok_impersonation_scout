@@ -3,7 +3,41 @@
 Internal automation workflow for monitoring TikTok impersonation and counterfeit activity. The system automates daily discovery by querying TikTok search surfaces (hashtag, video, user), filtering results deterministically, and exporting structured Excel reports for investigators. It also supports iterative keyword refinement using Azure OpenAI.
 
 ---
+## Quickstart
 
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/Mon-maker/tiktok_impersonation_scout.git
+cd tiktok_impersonation_scout
+```
+
+### 2. Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### 3. Set environment variables
+
+Create a `.env` file based on `.env.example` and set:
+
+- `AZURE_OPENAI_API_KEY`
+- `AZURE_OPENAI_API_ENDPOINT`
+- `AZURE_OPENAI_DEPLOYMENT_NAME`
+- `AZURE_OPENAI_API_VERSION`
+
+### 4. Prepare configuration
+
+Edit `configs/target2detect.example.json` with your target keywords and rename it if needed.
+
+### 5. Run a single scan
+
+```bash
+python tiktok_impersonation_scout.py --target brand_a
+```
+
+Reports will be generated in the output directory as structured Excel files.
 ## What This Does
 
 ### Collects TikTok results from:
